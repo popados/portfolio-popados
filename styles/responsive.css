@@ -1,0 +1,94 @@
+@media (max-width: 1000px) {
+	.app-container {
+		max-width: 100%;
+		padding: 1rem 1.25rem 2rem;
+	}
+
+	.panel-title {
+		max-width: 16ch;
+		font-size: 2.4rem;
+	}
+
+	.experience-timeline,
+	.services-grid,
+	.contact-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 750px) {
+	header {
+		padding-top: 1.5rem;
+	}
+
+	.app-navigation {
+		flex-wrap: wrap;
+	}
+
+	.app-navigation button {
+		flex: 1 1 180px;
+	}
+
+	.landing-panel,
+	.about-view,
+	.contact-view {
+		padding: 1.5rem;
+	}
+
+	.panel-title {
+		font-size: 2rem;
+	}
+
+	.hero-metrics,
+	.experience-timeline,
+	.services-grid,
+	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 450px) {
+	body {
+		font-size: 15px;
+	}
+
+	.app-container {
+		margin: 1rem auto;
+		padding: 0.75rem 0.85rem 1.5rem;
+	}
+
+	.app-navigation {
+		gap: 0.65rem;
+	}
+
+	.app-navigation button {
+		flex-basis: 100%;
+		padding: 0.8rem 1rem;
+	}
+
+	.landing-panel,
+	.about-view,
+	.contact-view {
+		padding: 1.15rem;
+		border-radius: 18px;
+	}
+
+	.panel-title {
+		font-size: 1.7rem;
+	}
+
+	.panel-body,
+	.timeline-detail,
+	.service-card-text {
+		font-size: 0.96rem;
+	}
+
+	.panel-actions {
+		flex-direction: column;
+	}
+
+	.panel-action-link {
+		width: 100%;
+	}
+}
+

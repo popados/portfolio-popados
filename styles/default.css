@@ -1,0 +1,41 @@
+
+:root {
+--main-color: #d8d2e1;
+--secondary-color: #34435e;
+--nav-bg-color: #1c1d21;
+--link-color: #f0b729;
+--last-color: #a4d2d1;
+--active-color: #b8932f;
+--primary-color: #586BA4;
+--accent-color: #FFE74C;
+--text-color: #221D23;
+--accent-color-2: #F78764;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+} 
+
+body {
+color: white;
+width: 100%;
+height: 100vh;
+background-color: rgb(67,67,67);
+/* background-color: var(--secondary-color); */
+font-family: sans-serif;
+font-size: 16px;
+}
+
+
+a {
+color:orange;
+text-decoration: none;
+}
+
+::before, ::after
+{
+
+}
+
