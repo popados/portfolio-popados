@@ -12,7 +12,7 @@
 
 ***
 
-## Specifications 
+## Specifications
 
 ***
 
@@ -23,27 +23,32 @@
 ## Setup
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) v18+
 - npm v9+
 
 ### Install dependencies
+
 ```bash
 npm install
 ```
 
 ### Dev server
+
 ```bash
 npm run dev
 ```
 Starts Vite at `http://localhost:5173` and opens the browser automatically.
 
 ### Production build
+
 ```bash
 npm run build
 ```
 Outputs optimised assets to `dist/`.
 
 ### Preview production build locally
+
 ```bash
 npm run preview
 ```
@@ -52,7 +57,7 @@ npm run preview
 
 ## Project Structure
 
-```
+```fs
 index.html
 vite.config.js
 package.json
