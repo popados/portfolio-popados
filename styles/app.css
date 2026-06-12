@@ -46,7 +46,7 @@ footer {
 .terminal-banner-ascii {
     color: #f5ffd8;
     font-family: "Space Mono", monospace;
-    font-size: clamp(0.95rem, 2.6vw, 1.5rem);
+    /* font-size: clamp(0.95rem, 2.6vw, 1.5rem); */
     font-weight: 700;
     line-height: 1.22;
     letter-spacing: 0;
@@ -56,9 +56,9 @@ footer {
 }
 
 .terminal-banner-overlay p {
-    color: #8bca1f;
+    color: #a1ff00;
     font-size: 0.8rem;
-    font-weight: 600;
+    /* font-weight: 600; */
     letter-spacing: 0.12em;
 }
 
@@ -109,10 +109,11 @@ footer {
 }
 
 .terminal-title {
-    color: rgba(248, 255, 229, 0.92);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    color: #a1ff00;
+    font-size: 1rem;
+    font-family: datatype,"Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .terminal-output {
@@ -166,7 +167,9 @@ footer {
 
 .terminal-block-title {
     color: #ffd9a6;
-    font-weight: 700;
+    /* font-weight: 700; */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
     margin-bottom: 0.2rem;
 }
 
@@ -186,8 +189,10 @@ footer {
 .terminal-prompt {
     color: #9afee0;
     white-space: nowrap;
-    font-size: 0.98rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-family: "Oxanium", sans-serif;
+    letter-spacing: 2px;
+    /* font-weight: 600; */
 }
 
 .terminal-input {

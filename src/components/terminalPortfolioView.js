@@ -150,6 +150,10 @@ export function createTerminalPortfolioView() {
     container.appendChild(banner);
     container.appendChild(terminal);
 
+    const commandHistory = [];
+    let historyIndex = -1;
+    let pendingInput = "";
+
     const appendCommandLine = (text) => {
         const row = document.createElement("p");
         row.className = "terminal-line terminal-line-command";
@@ -217,8 +221,53 @@ export function createTerminalPortfolioView() {
 
     inputForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        runCommand(input.value);
+        const rawInput = input.value;
+        const normalized = normalizeCommand(rawInput);
+
+        runCommand(rawInput);
+
+        if (normalized && commandHistory[commandHistory.length - 1] !== normalized) {
+            commandHistory.push(normalized);
+            historyIndex = -1;
+            pendingInput = "";
+        }
+
         input.value = "";
+    });
+
+    input.addEventListener("keydown", (event) => {
+        if (!commandHistory.length) {
+            return;
+        }
+
+        if (event.key === "ArrowUp") {
+            event.preventDefault();
+
+            if (historyIndex === -1) {
+                pendingInput = input.value;
+                historyIndex = commandHistory.length - 1;
+            } else if (historyIndex > 0) {
+                historyIndex -= 1;
+            }
+
+            input.value = commandHistory[historyIndex];
+            input.setSelectionRange(input.value.length, input.value.length);
+            return;
+        }
+
+        if (event.key === "ArrowDown" && historyIndex !== -1) {
+            event.preventDefault();
+
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex += 1;
+                input.value = commandHistory[historyIndex];
+            } else {
+                historyIndex = -1;
+                input.value = pendingInput;
+            }
+
+            input.setSelectionRange(input.value.length, input.value.length);
+        }
     });
 
     appendResponseBlock("Welcome", [
