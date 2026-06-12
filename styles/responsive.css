@@ -1,158 +1,43 @@
-@media (max-width: 1000px) {
-	.app-container {
-		width: 100%;
-		padding: 0;
-	}
-
-	.panel-title {
-		font-size: 2.2rem;
-	}
-
-	.services-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.contact-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.landing-panel {
-		padding: 4rem 2rem;
-	}
+@media (max-width: 900px) {
+    .app-container {
+        width: min(100% - 1.2rem, 1040px);
+        margin-top: 1rem;
+    }
 }
 
-@media (max-width: 750px) {
-	header {
-		padding: 1rem;
-	}
+@media (max-width: 640px) {
+    .app-container {
+        width: calc(100% - 1rem);
+        margin: 0.6rem auto 1.2rem;
+    }
 
-	.app-navigation {
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
+    .terminal-banner {
+        height: 180px;
+        max-height: 300px;
+    }
 
-	.app-navigation button {
-		font-size: 0.85rem;
-		padding: 0.4rem 0.8rem;
-	}
+    .terminal-banner-overlay h1 {
+        letter-spacing: 0.16em;
+        font-size: 1rem;
+    }
 
-	.landing-panel,
-	.about-view,
-	.contact-view {
-		padding: 3rem 1.5rem;
-	}
+    .terminal-banner-overlay p {
+        font-size: 0.78rem;
+    }
 
-	.landing-panel:first-child {
-		min-height: 80vh;
-	}
+    .terminal-header,
+    .terminal-output,
+    .terminal-input-form {
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
+    }
 
-	.panel-title {
-		font-size: 1.8rem;
-		max-width: 100%;
-	}
+    .terminal-input-form {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
 
-	.panel-body {
-		max-width: 100%;
-		font-size: 1rem;
-	}
-
-	.hero-metrics,
-	.experience-timeline,
-	.services-grid,
-	.contact-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.panel-actions {
-		flex-direction: column;
-	}
-
-	.panel-action-link {
-		width: 100%;
-	}
-
-	.about-view h1,
-	.contact-view h1 {
-		font-size: 2rem;
-	}
-
-	.contact-view form {
-		max-width: 100%;
-	}
+    .terminal-prompt {
+        font-size: 0.82rem;
+    }
 }
-
-@media (max-width: 450px) {
-	.app-navigation {
-		gap: 0.5rem;
-	}
-
-	.app-navigation button {
-		font-size: 0.75rem;
-		padding: 0.3rem 0.6rem;
-	}
-
-	.landing-panel,
-	.about-view,
-	.contact-view {
-		padding: 2rem 1rem;
-	}
-
-	.panel-title {
-		font-size: 1.4rem;
-	}
-
-	.panel-eyebrow {
-		font-size: 0.65rem;
-	}
-
-	.metric-card,
-	.timeline-entry,
-	.service-card,
-	.contact-card {
-		padding: 1rem;
-	}
-}
-	body {
-		font-size: 15px;
-	}
-
-	.app-container {
-		margin: 1rem auto;
-		padding: 0.75rem 0.85rem 1.5rem;
-	}
-
-	.app-navigation {
-		gap: 0.65rem;
-	}
-
-	.app-navigation button {
-		flex-basis: 100%;
-		padding: 0.8rem 1rem;
-	}
-
-	.landing-panel,
-	.about-view,
-	.contact-view {
-		padding: 1.15rem;
-		border-radius: 18px;
-	}
-
-	.panel-title {
-		font-size: 1.7rem;
-	}
-
-	.panel-body,
-	.timeline-detail,
-	.service-card-text {
-		font-size: 0.96rem;
-	}
-
-	.panel-actions {
-		flex-direction: column;
-	}
-
-	.panel-action-link {
-		width: 100%;
-	}
-
-

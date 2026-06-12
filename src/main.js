@@ -1,48 +1,15 @@
 
 
-
-import { createNavigation } from "./components/navigation.js";
-import { createContactView } from "./components/contactView.js";
-import { createAboutView } from "./components/aboutView.js";
-import { createLandingPageView } from "./components/landingPageView.js";
+import { createTerminalPortfolioView } from "./components/terminalPortfolioView.js";
 
 const app = document.getElementById("app");
 
-let currentPage = "landing";
-
-function renderApp(data = {}) {
+function renderApp() {
     app.innerHTML = "";
-
-    const nav = createNavigation((page) => {
-        currentPage = page;
-        renderApp(data);
-    }, currentPage);
-
-    app.appendChild(nav);
-
-    switch (currentPage) {
-        case "landing":
-            const landingPageView = createLandingPageView();
-            app.appendChild(landingPageView);
-            break;
-        case "contact":
-            const contactView = createContactView();
-            app.appendChild(contactView);
-            break;
-        case "about":
-            const aboutView = createAboutView();
-            app.appendChild(aboutView);
-            break;
-        default:
-            const fallbackLandingView = createLandingPageView();
-            app.appendChild(fallbackLandingView);
-    }
-
+    app.appendChild(createTerminalPortfolioView());
 }
 
-(async function init() {
-    renderApp();
-})();
+renderApp();
 
 
 
