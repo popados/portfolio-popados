@@ -155,7 +155,20 @@ footer {
 
 .terminal-line-command {
     color: #9afee0;
-    font-weight: 600;
+    font-family: "Oxanium", sans-serif;
+    /* font-weight: 600; */
+}
+
+.terminal-command-prompt {
+    color: #9afee0;
+}
+
+.terminal-command-text {
+    color: #a1ff00;
+}
+
+.terminal-line-help {
+    color: #dbd86c
 }
 
 .terminal-block {
@@ -169,7 +182,7 @@ footer {
     color: #ffd9a6;
     /* font-weight: 700; */
     font-size: 1.1rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 0.2rem;
 }
 
@@ -211,4 +224,147 @@ footer {
 
 .terminal-input::placeholder {
     color: rgba(248, 255, 229, 0.62);
+}
+
+.terminal-project-browser {
+    border: 1px solid rgba(196, 255, 124, 0.3);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(11, 15, 19, 0.94), rgba(11, 15, 19, 0.88));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+    padding: 1rem;
+    /* display: grid; */
+    gap: 0.9rem;
+}
+
+.terminal-project-browser-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.terminal-project-browser-title {
+    color: #c9ff9a;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.terminal-project-browser-count {
+    color: #9afee0;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+.terminal-project-browser-controls {
+    display: inline-flex;
+    gap: 0.45rem;
+}
+
+.terminal-project-nav-button {
+    border: 1px solid rgba(154, 254, 224, 0.45);
+    background: rgba(124, 246, 211, 0.12);
+    color: #e9ffe6;
+    border-radius: 8px;
+    padding: 0.38rem 0.7rem;
+    font-family: "Space Mono", monospace;
+    font-size: 0.84rem;
+    /* font-weight: 600; */
+    cursor: pointer;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.terminal-project-nav-button:hover {
+    background: rgba(196, 255, 124, 0.2);
+    border-color: rgba(196, 255, 124, 0.72);
+}
+
+.terminal-project-card {
+    border: 1px solid rgba(196, 255, 124, 0.24);
+    border-radius: 12px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.75rem;
+    background: rgba(9, 14, 18, 0.75);
+}
+
+.terminal-project-card-title {
+    color: #f0ffd5;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.terminal-project-card-description {
+    color: #dff8c3;
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.terminal-project-card-subtitle {
+    color: #dbd86c;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.terminal-project-card-features {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.35rem;
+}
+
+.terminal-project-card-features li {
+    color: #eefed7;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.terminal-project-card-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.terminal-project-card-stack-tag {
+    border: 1px solid rgba(196, 255, 124, 0.42);
+    color: #e8ffd5;
+    background: rgba(154, 254, 224, 0.18);
+    border-radius: 8px;
+    padding: 0.35rem 0.68rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.terminal-project-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.terminal-project-card-link {
+    border: 1px solid rgba(196, 255, 124, 0.42);
+    background: rgba(196, 255, 124, 0.12);
+    color: #e8ffd5;
+    border-radius: 8px;
+    padding: 0.35rem 0.68rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.terminal-project-card-link:hover {
+    background: rgba(154, 254, 224, 0.18);
+    border-color: rgba(154, 254, 224, 0.72);
+}
+
+.terminal-project-card-image {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(196, 255, 124, 0.24);
+    object-fit: cover;
+    max-height: 230px;
 }

@@ -66,4 +66,26 @@
     .terminal-input {
         font-size: 0.94rem;
     }
+
+    .terminal-project-browser {
+        padding: 0.8rem;
+    }
+
+    .terminal-project-browser-header {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        gap: 0.55rem;
+    }
+
+    .terminal-project-card {
+        padding: 0.85rem;
+    }
+
+    .terminal-project-card-title {
+        font-size: 1.02rem;
+    }
+
+    .terminal-project-card-image {
+        max-height: 180px;
+    }
 }
