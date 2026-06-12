@@ -66,13 +66,14 @@ function normalizeCommand(value) {
 export function createTerminalPortfolioView() {
     const container = document.createElement("section");
     container.className = "terminal-portfolio";
+    const bannerImageSrc = new URL("../../img/terminal-portfolio.png", import.meta.url).href;
 
     const banner = document.createElement("div");
     banner.className = "terminal-banner";
 
     const bannerImage = document.createElement("img");
     bannerImage.className = "terminal-banner-image";
-    bannerImage.src = "/img/terminal-portfolio.png";
+    bannerImage.src = bannerImageSrc;
     bannerImage.alt = "Terminal portfolio style reference";
 
     const bannerOverlay = document.createElement("div");
