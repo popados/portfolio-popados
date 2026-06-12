@@ -86,20 +86,18 @@ export function createTerminalPortfolioView() {
     const bannerRow = (text = "") => `|${text.padEnd(bannerContentWidth, " ")}|`;
 
     bannerTitle.textContent = [
-        bannerBorder,
-        bannerRow("                     TERMINAL PORTFOLIO"),
-        bannerRow("          ____   ___   ____     _    ____    ___    ____"),
-        bannerRow("         |  _ \\ / _ \\ |  _ \\   / \\  |  _ \\  / _ \\  / ___|"),
-        bannerRow("         | |_) | | | || |_) | / _ \\ | | | || | | | \\___ \\"),
-        bannerRow("         |  __/| |_| ||  __/ / ___ \\| |_| || |_| |  ___)|"),
-        bannerRow("         |_|    \\___/ |_|   /_/   \\_\\____/  \\___/  |____/"),
+        bannerRow("            ____   ___   ____     _    ____    ___    ____"),
+        bannerRow("           |  _ \\ / _ \\ |  _ \\   / \\  |  _ \\  / _ \\  / ___|"),
+        bannerRow("           | |_) | | | || |_) | / _ \\ | | | || | | | \\___ \\"),
+        bannerRow("           |  __/| |_| ||  __/ / ___ \\| |_| || |_| |  ___)|"),
+        bannerRow("           |_|    \\___/ |_|   /_/   \\_\\____/  \\___/  |____/"),
         bannerRow(),
-        bannerRow("                        >>> POPADOS <<<"),
+        bannerRow("     >>> |Popados| <<< "),
         bannerBorder,
     ].join("\n");
 
     const bannerSubtitle = document.createElement("p");
-    bannerSubtitle.textContent = "Terminal Console Portfolio";
+    bannerSubtitle.textContent = "Portfolio Terminal Console | 2026";
 
     bannerOverlay.appendChild(bannerTitle);
     bannerOverlay.appendChild(bannerSubtitle);

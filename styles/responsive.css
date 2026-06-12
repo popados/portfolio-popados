@@ -16,13 +16,14 @@
         max-height: 300px;
     }
 
-    .terminal-banner-overlay h1 {
-        letter-spacing: 0.16em;
-        font-size: 1rem;
+    .terminal-banner-ascii {
+        font-size: clamp(0.74rem, 2.6vw, 0.92rem);
+        line-height: 1.18;
     }
 
     .terminal-banner-overlay p {
-        font-size: 0.78rem;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
     }
 
     .terminal-header,
@@ -38,6 +39,11 @@
     }
 
     .terminal-prompt {
-        font-size: 0.82rem;
+        font-size: 0.88rem;
+    }
+
+    .terminal-line,
+    .terminal-input {
+        font-size: 0.94rem;
     }
 }

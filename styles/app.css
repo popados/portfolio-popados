@@ -44,20 +44,22 @@ footer {
 }
 
 .terminal-banner-ascii {
-    color: #f8ffe5;
+    color: #f5ffd8;
     font-family: "Space Mono", monospace;
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
-    line-height: 1.3;
+    font-size: clamp(0.95rem, 2.6vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.22;
     letter-spacing: 0;
     white-space: pre;
     margin: 0;
-    text-shadow: 0 2px 10px rgba(11, 15, 19, 0.72);
+    text-shadow: 0 2px 10px rgba(11, 15, 19, 0.88), 0 0 14px rgba(124, 246, 211, 0.2);
 }
 
 .terminal-banner-overlay p {
-    color: #c4ff7c;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
+    color: #e6ffba;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
 }
 
 .terminal-shell {
@@ -107,9 +109,10 @@ footer {
 }
 
 .terminal-title {
-    color: rgba(248, 255, 229, 0.75);
-    font-size: 0.82rem;
-    letter-spacing: 0.07em;
+    color: rgba(248, 255, 229, 0.92);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
 }
 
 .terminal-output {
@@ -143,14 +146,15 @@ footer {
 }
 
 .terminal-line {
-    color: #d5f9b5;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    color: #eeffd3;
+    line-height: 1.6;
+    font-size: 1rem;
     word-break: break-word;
 }
 
 .terminal-line-command {
-    color: #7cf6d3;
+    color: #9afee0;
+    font-weight: 600;
 }
 
 .terminal-block {
@@ -161,7 +165,7 @@ footer {
 }
 
 .terminal-block-title {
-    color: #ffcf8e;
+    color: #ffd9a6;
     font-weight: 700;
     margin-bottom: 0.2rem;
 }
@@ -180,9 +184,10 @@ footer {
 }
 
 .terminal-prompt {
-    color: #7cf6d3;
+    color: #9afee0;
     white-space: nowrap;
-    font-size: 0.92rem;
+    font-size: 0.98rem;
+    font-weight: 600;
 }
 
 .terminal-input {
@@ -190,7 +195,8 @@ footer {
     background: transparent;
     color: #f8ffe5;
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
     width: 100%;
 }
 
@@ -199,5 +205,5 @@ footer {
 }
 
 .terminal-input::placeholder {
-    color: rgba(248, 255, 229, 0.42);
+    color: rgba(248, 255, 229, 0.62);
 }

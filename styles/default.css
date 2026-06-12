@@ -26,8 +26,12 @@ body {
 		radial-gradient(circle at 10% 10%, rgba(0, 191, 165, 0.1), transparent 40%),
 		radial-gradient(circle at 90% 20%, rgba(255, 148, 71, 0.12), transparent 38%),
 		#080b10;
-	font-family: "Space Mono", monospace;
-	font-size: 16px;
+	font-family: "Space Mono", "JetBrains Mono", "Fira Code", monospace;
+	font-size: 17px;
+	line-height: 1.55;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 
