@@ -79,8 +79,24 @@ export function createTerminalPortfolioView() {
     const bannerOverlay = document.createElement("div");
     bannerOverlay.className = "terminal-banner-overlay";
 
-    const bannerTitle = document.createElement("h1");
-    bannerTitle.textContent = "Banner Placeholder";
+    const bannerTitle = document.createElement("pre");
+    bannerTitle.className = "terminal-banner-ascii";
+    const bannerContentWidth = 71;
+    const bannerBorder = `+${"-".repeat(bannerContentWidth)}+`;
+    const bannerRow = (text = "") => `|${text.padEnd(bannerContentWidth, " ")}|`;
+
+    bannerTitle.textContent = [
+        bannerBorder,
+        bannerRow("                     TERMINAL PORTFOLIO"),
+        bannerRow("          ____   ___   ____     _    ____    ___    ____"),
+        bannerRow("         |  _ \\ / _ \\ |  _ \\   / \\  |  _ \\  / _ \\  / ___|"),
+        bannerRow("         | |_) | | | || |_) | / _ \\ | | | || | | | \\___ \\"),
+        bannerRow("         |  __/| |_| ||  __/ / ___ \\| |_| || |_| |  ___)|"),
+        bannerRow("         |_|    \\___/ |_|   /_/   \\_\\____/  \\___/  |____/"),
+        bannerRow(),
+        bannerRow("                        >>> POPADOS <<<"),
+        bannerBorder,
+    ].join("\n");
 
     const bannerSubtitle = document.createElement("p");
     bannerSubtitle.textContent = "Terminal Console Portfolio";
