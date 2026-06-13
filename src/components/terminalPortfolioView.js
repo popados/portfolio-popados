@@ -61,6 +61,9 @@ const HELP_LINES = [
     "clear - clear the terminal",
 ];
 
+const TERMINAL_PORTFOLIO_IMAGE_SRC = new URL("../../img/terminal-portfolio.png", import.meta.url).href;
+const CAT_WINDOW_IMAGE_SRC = new URL("../../img/cat-window.png", import.meta.url).href;
+
 const SOCIAL_LINKS = [
     {
         iconClass: "bi bi-facebook",
@@ -91,7 +94,7 @@ const PROJECT_CARDS = [
             "Dynamic project and skill browsers with prev/next navigation",
         ],
         stack: ["JavaScript", "HTML", "CSS", "Vite"],
-        screenshot: "../../img/terminal-portfolio.png",
+        screenshot: TERMINAL_PORTFOLIO_IMAGE_SRC,
         screenshotAlt: "Terminal Portfolio Screenshot",
         githubUrl: "https://github.com/popados/portfolio-popados",
         demoUrl: "https://popados.org",
@@ -107,7 +110,7 @@ const PROJECT_CARDS = [
             "Image-forward content flow optimized for blog browsing",
         ],
         stack: ["JavaScript", "HTML", "CSS", "Vite", "Node.js"],
-        screenshot: "../../img/cat-window.png",
+        screenshot: CAT_WINDOW_IMAGE_SRC,
         screenshotAlt: "Cat blog project screenshot",
         githubUrl: "https://github.com/popados/cat-window",
         demoUrl: "https://thecatwindow.com",
@@ -122,7 +125,7 @@ const PROJECT_CARDS = [
             "Reduced styling complexity and duplication",
         ],
         stack: ["JavaScript", "CSS", "Design Systems"],
-        screenshot: "../../img/terminal-portfolio.png",
+        screenshot: TERMINAL_PORTFOLIO_IMAGE_SRC,
         screenshotAlt: "UI refactor project screenshot",
         githubUrl: "https://github.com/popados/ui-refactor-work",
         demoUrl: "https://popados.org/ui-refactor-work",
@@ -179,7 +182,7 @@ function normalizeCommand(value) {
 export function createTerminalPortfolioView() {
     const container = document.createElement("section");
     container.className = "terminal-portfolio";
-    const bannerImageSrc = new URL("../../img/terminal-portfolio.png", import.meta.url).href;
+    const bannerImageSrc = TERMINAL_PORTFOLIO_IMAGE_SRC;
 
     const banner = document.createElement("div");
     banner.className = "terminal-banner";
@@ -488,7 +491,7 @@ export function createTerminalPortfolioView() {
             projectCardStack.appendChild(stackTag);
         });
 
-        projectCardImage.src = new URL(project.screenshot, import.meta.url).href;
+        projectCardImage.src = project.screenshot;
         projectCardImage.alt = project.screenshotAlt;
         projectCardGithubLink.href = project.githubUrl;
         projectCardDemoLink.href = project.demoUrl;
