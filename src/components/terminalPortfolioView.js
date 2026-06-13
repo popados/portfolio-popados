@@ -20,7 +20,7 @@ const COMMAND_CONTENT = {
         title: "Projects",
         lines: [
             "1) Terminal Portfolio - command-driven site",
-            "2) Cat Blog: The Cat Window - article-first layouts built for visual storytelling",
+            "2) The Cat Window - article-first layouts built for visual storytelling",
             "3) UI Refactor Work - modernized and simplified existing interfaces",
         ],
     },
@@ -100,7 +100,7 @@ const PROJECT_CARDS = [
         demoUrl: "https://popados.org",
     },
     {
-        title: "Cat Blog: The Cat Window",
+        title: "The Cat Window",
         description:
             "A cat-focused blog and image gallery experience with a brutalist UI/UX direction, modular section cards, and article-first layouts built for visual storytelling.",
         features: [
