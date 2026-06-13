@@ -1,8 +1,9 @@
-const ABOUT_LINES = [
-    "> Nikhil Khandwala or Popados, a front-end web developer specializing in responsive websites, modern user interfaces, and API-driven applications.",
-    "> I create detail-oriented portfolio websites, dashboards, and responsive landing pages with a strong foundation in usability, performance, and modern design. ",
-    "> Focusing on building clean, professional web experiences that not only look great but also provide intuitive navigation to establish a polished and effective online presence for your brand, skills, or services.",
-    "> Tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+const ABOUT_TERMINAL_LINES = [
+    "Name: Nikhil Khandwala (Popados)",
+    "Role: Front-end web developer",
+    "Focus: Responsive websites, modern interfaces, API-driven applications",
+    "Stack: HTML, CSS, JavaScript, React, Node.js, Express, MongoDB",
+    "> Builds portfolio sites, dashboards, and landing pages with strong usability, performance, and maintainable styling.",
 ];
 
 const CONTACT_LINES = [
@@ -34,10 +35,53 @@ const SOCIAL_LINKS = [
     },
 ];
 
+const ABOUT_BROWSER_SECTION = {
+    title: "About",
+    subtitle: "Profile Snapshot",
+    metadata: [
+        { label: "Overview", value: "Nikhil Khandwala or Popados, a front-end web developer specializing in responsive websites, modern user interfaces, and API-driven applications." },
+        { label: "Build Style", value: "I create detail-oriented portfolio websites, dashboards, and responsive landing pages with a strong foundation in usability, performance, and modern design." },
+        { label: "Approach", value: "Focusing on building clean, professional web experiences that not only look great but also provide intuitive navigation to establish a polished and effective online presence for your brand, skills, or services." },
+        { label: "Stack", value: "HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB" },
+    ],
+    lines: [],
+};
+
+const CONTACT_BROWSER_SECTION = {
+    title: "Contact",
+    subtitle: "Reach Out",
+    metadata: [
+        { label: "Email", value: "popad.dev@example.com" },
+        { label: "Location", value: "Open to remote collaboration" },
+        { label: "Response", value: "24-48 hours" },
+    ],
+    lines: [],
+};
+
+const RESUME_BROWSER_SECTION = {
+    title: "Resume",
+    subtitle: "Current Status",
+    metadata: [
+        { label: "Availability", value: "Resume available on request" },
+        { label: "Contact", value: "popad.dev@example.com" },
+    ],
+    lines: [],
+};
+
+const SOCIAL_BROWSER_SECTION = {
+    title: "Social Media",
+    subtitle: "Profiles",
+    metadata: [
+        { label: "Primary", value: "GitHub and LinkedIn" },
+        { label: "Community", value: "Facebook" },
+    ],
+    links: SOCIAL_LINKS,
+};
+
 const COMMAND_CONTENT = {
     about: {
         title: "About",
-        lines: ABOUT_LINES,
+        lines: ABOUT_TERMINAL_LINES,
     },
     skills: {
         title: "Skills",
@@ -86,22 +130,10 @@ const CAT_WINDOW_IMAGE_SRC = new URL("../../img/cat-window.png", import.meta.url
 
 
 const BROWSER_SECTIONS = {
-    about: {
-        title: "About",
-        lines: ABOUT_LINES,
-    },
-    contact: {
-        title: "Contact",
-        lines: CONTACT_LINES,
-    },
-    resume: {
-        title: "Resume",
-        lines: RESUME_LINES,
-    },
-    "social media": {
-        title: "Social Media",
-        links: SOCIAL_LINKS,
-    },
+    about: ABOUT_BROWSER_SECTION,
+    contact: CONTACT_BROWSER_SECTION,
+    resume: RESUME_BROWSER_SECTION,
+    "social media": SOCIAL_BROWSER_SECTION,
 };
 
 const PROJECT_CARDS = [
@@ -621,7 +653,34 @@ export function createTerminalPortfolioView() {
 
     const renderAboutCard = () => {
         aboutCard.innerHTML = "";
-        BROWSER_SECTIONS.about.lines.forEach((lineText) => {
+        const section = BROWSER_SECTIONS.about;
+
+        if (section.subtitle) {
+            const subtitle = document.createElement("p");
+            subtitle.className = "terminal-block-title";
+            subtitle.textContent = section.subtitle;
+            aboutCard.appendChild(subtitle);
+        }
+
+        if (section.metadata?.length) {
+            section.metadata.forEach((item) => {
+                const line = document.createElement("p");
+                line.className = "terminal-line";
+
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = `${item.label}:`;
+
+                const value = document.createElement("span");
+                value.textContent = ` ${item.value}`;
+
+                line.appendChild(label);
+                line.appendChild(value);
+                aboutCard.appendChild(line);
+            });
+        }
+
+        section.lines.forEach((lineText) => {
             const line = document.createElement("p");
             line.className = "terminal-line";
             if (lineText.trim().startsWith(">")) {
@@ -641,7 +700,34 @@ export function createTerminalPortfolioView() {
 
     const renderSocialCard = () => {
         socialCard.innerHTML = "";
-        BROWSER_SECTIONS["social media"].links.forEach((entry) => {
+        const section = BROWSER_SECTIONS["social media"];
+
+        if (section.subtitle) {
+            const subtitle = document.createElement("p");
+            subtitle.className = "terminal-block-title";
+            subtitle.textContent = section.subtitle;
+            socialCard.appendChild(subtitle);
+        }
+
+        if (section.metadata?.length) {
+            section.metadata.forEach((item) => {
+                const line = document.createElement("p");
+                line.className = "terminal-line";
+
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = `${item.label}:`;
+
+                const value = document.createElement("span");
+                value.textContent = ` ${item.value}`;
+
+                line.appendChild(label);
+                line.appendChild(value);
+                socialCard.appendChild(line);
+            });
+        }
+
+        section.links.forEach((entry) => {
             const line = document.createElement("p");
             line.className = "terminal-line terminal-line-social";
 
@@ -673,7 +759,34 @@ export function createTerminalPortfolioView() {
 
     const renderContactCard = () => {
         contactCard.innerHTML = "";
-        BROWSER_SECTIONS.contact.lines.forEach((lineText) => {
+        const section = BROWSER_SECTIONS.contact;
+
+        if (section.subtitle) {
+            const subtitle = document.createElement("p");
+            subtitle.className = "terminal-block-title";
+            subtitle.textContent = section.subtitle;
+            contactCard.appendChild(subtitle);
+        }
+
+        if (section.metadata?.length) {
+            section.metadata.forEach((item) => {
+                const line = document.createElement("p");
+                line.className = "terminal-line";
+
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = `${item.label}:`;
+
+                const value = document.createElement("span");
+                value.textContent = ` ${item.value}`;
+
+                line.appendChild(label);
+                line.appendChild(value);
+                contactCard.appendChild(line);
+            });
+        }
+
+        section.lines.forEach((lineText) => {
             const line = document.createElement("p");
             line.className = "terminal-line";
             line.textContent = lineText;
@@ -683,7 +796,34 @@ export function createTerminalPortfolioView() {
 
     const renderResumeCard = () => {
         resumeCard.innerHTML = "";
-        BROWSER_SECTIONS.resume.lines.forEach((lineText) => {
+        const section = BROWSER_SECTIONS.resume;
+
+        if (section.subtitle) {
+            const subtitle = document.createElement("p");
+            subtitle.className = "terminal-block-title";
+            subtitle.textContent = section.subtitle;
+            resumeCard.appendChild(subtitle);
+        }
+
+        if (section.metadata?.length) {
+            section.metadata.forEach((item) => {
+                const line = document.createElement("p");
+                line.className = "terminal-line";
+
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = `${item.label}:`;
+
+                const value = document.createElement("span");
+                value.textContent = ` ${item.value}`;
+
+                line.appendChild(label);
+                line.appendChild(value);
+                resumeCard.appendChild(line);
+            });
+        }
+
+        section.lines.forEach((lineText) => {
             const line = document.createElement("p");
             line.className = "terminal-line";
             line.textContent = lineText;
@@ -812,6 +952,18 @@ export function createTerminalPortfolioView() {
 
                 line.appendChild(aboutMarker);
                 line.appendChild(aboutText);
+            } else if (title === "About" && lineText.includes(":")) {
+                const colonIdx = lineText.indexOf(":");
+
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = lineText.slice(0, colonIdx + 1);
+
+                const value = document.createElement("span");
+                value.textContent = lineText.slice(colonIdx + 1);
+
+                line.appendChild(label);
+                line.appendChild(value);
             } else if (title === "Skills" && lineText.includes(":")) {
                 const colonIdx = lineText.indexOf(":");
                 const label = document.createElement("span");

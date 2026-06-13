@@ -110,8 +110,8 @@ footer {
 
 .terminal-title {
     color: #a1ff00;
-    font-size: 1rem;
-    font-family: datatype,"Space Mono", monospace;
+    font-size: 1.15rem;
+    font-family: "Datatype", monospace;
     font-weight: 700;
     letter-spacing: 3px;
 }
@@ -150,6 +150,7 @@ footer {
     color: #eeffd3;
     line-height: 1.6;
     font-size: 1rem;
+    letter-spacing: .5px;
     word-break: break-word;
 }
 
@@ -175,6 +176,12 @@ footer {
     color: #a1ff00;
 }
 
+.terminal-about-label {
+    color: #c9ff9a;
+    font-family: "Oxanium", sans-serif;
+    letter-spacing: 1px;
+}
+
 .terminal-skill-label {
     color: #dbd86c;
     /* font-family: "Oxanium", sans-serif; */
@@ -192,7 +199,7 @@ footer {
 
 .terminal-block-title {
     color: #ffd9a6;
-    /* font-weight: 700; */
+    font-weight: 500;
     font-size: 1.1rem;
     letter-spacing: 1px;
     margin-bottom: 0.2rem;
@@ -331,6 +338,7 @@ footer {
     padding: 1rem;
     display: grid;
     gap: 0.75rem;
+    margin-top: 10px;
     background: rgba(9, 14, 18, 0.75);
 }
 
@@ -412,7 +420,7 @@ footer {
     border-radius: 10px;
     border: 1px solid rgba(196, 255, 124, 0.24);
     object-fit: cover;
-    /* max-height: 230px; */
+    max-height: 400px;
 }
 
 .terminal-skills-browser {
@@ -448,9 +456,9 @@ footer {
 
 .terminal-skill-name {
     color: #dbd86c;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-size: 1rem;
+    /* font-weight: 700; */
+    letter-spacing: 1px;
 }
 
 .terminal-skill-value {
