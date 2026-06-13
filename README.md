@@ -102,13 +102,13 @@ Got some content added and worked with finishing up features I want to have.
 
 Very sleek minimal design that shows everything in an easy method.
 
-TODO:
+**TODO:**
 - Cards for each command that spawns below the terminal
-  - About
+  - About [x]
     - Add card that has a description of my services
-  - Skills
+  - Skills [x]
     - Update skills and categories
-  - Resume
+  - Resume 
     - Get a downloadable link to my resume
     - Display Some stuff in the terminal
     - Card displays more accurate information
@@ -119,6 +119,10 @@ TODO:
     - Terminal has links to emails
   - Social Media
     - Card that displays a preview of the social media link
+    - Change the way links word on the browser
+      - use icons
+
+Next steps are the resume, contact, and 1 project. As well as, the social media links in the browser should be icons
 
 ***
 

@@ -152,6 +152,7 @@ footer {
     font-size: 1rem;
     letter-spacing: .5px;
     word-break: break-word;
+    font-family: "Oxanium", sans-serif;
 }
 
 .terminal-line-command {
@@ -169,7 +170,14 @@ footer {
 }
 
 .terminal-line-help {
-    color: #dbd86c
+    color: #d7ffb0;
+    letter-spacing: 1px;
+}
+
+.terminal-help-label {
+    color: #dbd86c;
+    font-family: "Oxanium", sans-serif;
+    letter-spacing: 1px;
 }
 
 .terminal-about-marker {
@@ -184,8 +192,9 @@ footer {
 
 .terminal-skill-label {
     color: #dbd86c;
-    /* font-family: "Oxanium", sans-serif; */
+    font-family: "Oxanium", sans-serif;
     font-size: 1rem;
+    font-weight: 500;
     /* text-transform: uppercase; */
     letter-spacing: 1px;
 }
@@ -221,8 +230,8 @@ footer {
 }
 
 .terminal-social-icon {
-    color: #d7ffb0;
-    font-size: 0.95rem;
+    color: #dbd86c;
+    font-size: 1.2rem;
     display: inline-flex;
     align-items: center;
     margin-right: 0.18rem;
@@ -233,7 +242,7 @@ footer {
 }
 
 .terminal-social-link {
-    color: #9afee0;
+    color: #c9ff9a;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
@@ -281,7 +290,7 @@ footer {
 .terminal-project-browser {
     border: 1px solid rgba(196, 255, 124, 0.3);
     border-radius: 14px;
-    background: linear-gradient(180deg, rgba(11, 15, 19, 0.94), rgba(11, 15, 19, 0.88));
+    background: linear-gradient(25deg, rgba(33, 54, 6, 0.171), rgba(2, 51, 44, 0.144));
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
     padding: 1rem;
     /* display: grid; */
@@ -463,9 +472,11 @@ footer {
 
 .terminal-skill-value {
     color: #9afee0;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-size: 1.01rem;
+    /* line-height: 2; */
+    font-family: "Oxanium", sans-serif;
+    /* font-weight: 700; */
+    letter-spacing: 2px;
 }
 
 .terminal-skill-progress-track {

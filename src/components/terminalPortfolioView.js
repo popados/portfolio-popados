@@ -203,10 +203,10 @@ const SKILL_CATEGORIES = [
         title: "Frontend",
         description: "Core client-side tools I use to build responsive interfaces and polished user experiences.",
         items: [
-            { name: "JavaScript", level: 92 },
-            { name: "HTML", level: 96 },
-            { name: "CSS", level: 94 },
-            { name: "React", level: 88 },
+            { name: "JavaScript", level: 95 },
+            { name: "HTML", level: 85 },
+            { name: "CSS", level: 90 },
+            { name: "React", level: 60 },
         ],
     },
     {
@@ -559,6 +559,8 @@ export function createTerminalPortfolioView() {
     const renderSkillCard = () => {
         const category = SKILL_CATEGORIES[currentSkillCategoryIndex];
         skillBrowserCount.textContent = `${currentSkillCategoryIndex + 1}/${SKILL_CATEGORIES.length}`;
+        prevSkillButton.disabled = currentSkillCategoryIndex === 0;
+        nextSkillButton.disabled = currentSkillCategoryIndex === SKILL_CATEGORIES.length - 1;
         skillCardTitle.textContent = category.title;
         skillCardDescription.textContent = category.description;
 
@@ -607,6 +609,8 @@ export function createTerminalPortfolioView() {
     const renderProjectCard = () => {
         const project = PROJECT_CARDS[currentProjectIndex];
         projectBrowserCount.textContent = `${currentProjectIndex + 1}/${PROJECT_CARDS.length}`;
+        prevProjectButton.disabled = currentProjectIndex === 0;
+        nextProjectButton.disabled = currentProjectIndex === PROJECT_CARDS.length - 1;
         projectCardTitle.textContent = project.title;
         projectCardDescription.textContent = project.description;
 
@@ -740,7 +744,7 @@ export function createTerminalPortfolioView() {
             icon.appendChild(iconGlyph);
 
             const label = document.createElement("span");
-            label.className = "terminal-social-label";
+            label.className = "terminal-skill-label";
             label.textContent = `${entry.label}: `;
 
             const link = document.createElement("a");
@@ -887,22 +891,38 @@ export function createTerminalPortfolioView() {
     };
 
     prevSkillButton.addEventListener("click", () => {
-        currentSkillCategoryIndex = currentSkillCategoryIndex === 0 ? SKILL_CATEGORIES.length - 1 : currentSkillCategoryIndex - 1;
+        if (currentSkillCategoryIndex === 0) {
+            return;
+        }
+
+        currentSkillCategoryIndex -= 1;
         renderSkillCard();
     });
 
     nextSkillButton.addEventListener("click", () => {
-        currentSkillCategoryIndex = currentSkillCategoryIndex === SKILL_CATEGORIES.length - 1 ? 0 : currentSkillCategoryIndex + 1;
+        if (currentSkillCategoryIndex === SKILL_CATEGORIES.length - 1) {
+            return;
+        }
+
+        currentSkillCategoryIndex += 1;
         renderSkillCard();
     });
 
     prevProjectButton.addEventListener("click", () => {
-        currentProjectIndex = currentProjectIndex === 0 ? PROJECT_CARDS.length - 1 : currentProjectIndex - 1;
+        if (currentProjectIndex === 0) {
+            return;
+        }
+
+        currentProjectIndex -= 1;
         renderProjectCard();
     });
 
     nextProjectButton.addEventListener("click", () => {
-        currentProjectIndex = currentProjectIndex === PROJECT_CARDS.length - 1 ? 0 : currentProjectIndex + 1;
+        if (currentProjectIndex === PROJECT_CARDS.length - 1) {
+            return;
+        }
+
+        currentProjectIndex += 1;
         renderProjectCard();
     });
 
@@ -964,6 +984,19 @@ export function createTerminalPortfolioView() {
 
                 line.appendChild(label);
                 line.appendChild(value);
+            } else if (type === "help" && lineText.includes(" - ")) {
+                const separator = " - ";
+                const separatorIdx = lineText.indexOf(separator);
+
+                const label = document.createElement("span");
+                label.className = "terminal-help-label";
+                label.textContent = lineText.slice(0, separatorIdx);
+
+                const value = document.createElement("span");
+                value.textContent = lineText.slice(separatorIdx);
+
+                line.appendChild(label);
+                line.appendChild(value);
             } else if (title === "Skills" && lineText.includes(":")) {
                 const colonIdx = lineText.indexOf(":");
                 const label = document.createElement("span");
@@ -1008,7 +1041,7 @@ export function createTerminalPortfolioView() {
             icon.appendChild(iconGlyph);
 
             const label = document.createElement("span");
-            label.className = "terminal-social-label";
+            label.className = "terminal-skill-label";
             label.textContent = `${entry.label}: `;
 
             const link = document.createElement("a");
