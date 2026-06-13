@@ -183,7 +183,6 @@ export function createTerminalPortfolioView() {
 
     const banner = document.createElement("div");
     banner.className = "terminal-banner";
-    const projectImageSrc = new URL("../../img/terminal-portfolio.png", import.meta.url).href;
 
     const bannerImage = document.createElement("img");
     bannerImage.className = "terminal-banner-image";
@@ -489,7 +488,7 @@ export function createTerminalPortfolioView() {
             projectCardStack.appendChild(stackTag);
         });
 
-        projectCardImage.src = project.screenshot;
+        projectCardImage.src = new URL(project.screenshot, import.meta.url).href;
         projectCardImage.alt = project.screenshotAlt;
         projectCardGithubLink.href = project.githubUrl;
         projectCardDemoLink.href = project.demoUrl;
