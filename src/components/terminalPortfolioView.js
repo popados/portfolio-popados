@@ -1,12 +1,43 @@
+const ABOUT_LINES = [
+    "> Nikhil Khandwala or Popados, a front-end web developer specializing in responsive websites, modern user interfaces, and API-driven applications.",
+    "> I create detail-oriented portfolio websites, dashboards, and responsive landing pages with a strong foundation in usability, performance, and modern design. ",
+    "> Focusing on building clean, professional web experiences that not only look great but also provide intuitive navigation to establish a polished and effective online presence for your brand, skills, or services.",
+    "> Tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+];
+
+const CONTACT_LINES = [
+    "Email: popad.dev@example.com",
+    "Location: Open to remote collaboration",
+    "Response time: 24-48 hours",
+];
+
+const RESUME_LINES = [
+    "Resume is available on request.",
+    "Email: popad.dev@example.com",
+];
+
+const SOCIAL_LINKS = [
+    {
+        iconClass: "bi bi-facebook",
+        label: "Facebook",
+        url: "https://www.facebook.com/nik.khandwala/",
+    },
+    {
+        iconClass: "bi bi-github",
+        label: "GitHub",
+        url: "https://github.com/popados/",
+    },
+    {
+        iconClass: "bi bi-linkedin",
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/nikhil-khandwala/",
+    },
+];
+
 const COMMAND_CONTENT = {
     about: {
         title: "About",
-        lines: [
-            "> Nikhil Khandwala or Popados, a front-end web developer specializing in responsive websites, modern user interfaces, and API-driven applications.",
-            "> I create detail-oriented portfolio websites, dashboards, and responsive landing pages with a strong foundation in usability, performance, and modern design. ",
-            "> Focusing on building clean, professional web experiences that not only look great but also provide intuitive navigation to establish a polished and effective online presence for your brand, skills, or services.",
-            "> Tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB."
-        ],
+        lines: ABOUT_LINES,
     },
     skills: {
         title: "Skills",
@@ -26,26 +57,15 @@ const COMMAND_CONTENT = {
     },
     resume: {
         title: "Resume",
-        lines: [
-            "Resume is available on request.",
-            "Email: popad.dev@example.com",
-        ],
+        lines: RESUME_LINES,
     },
     contact: {
         title: "Contact",
-        lines: [
-            "Email: popad.dev@example.com",
-            "Location: Open to remote collaboration",
-            "Response time: 24-48 hours",
-        ],
+        lines: CONTACT_LINES,
     },
     "social media": {
         title: "Social Media",
-        lines: [
-            "GitHub: https://github.com/popados/",
-            "LinkedIn: https://www.linkedin.com/in/nikhil-khandwala/",
-            "Facebook: https://www.facebook.com/nik.khandwala",
-        ],
+        lines: SOCIAL_LINKS.map((entry) => `${entry.label}: ${entry.url}`),
     },
 };
 
@@ -64,23 +84,25 @@ const HELP_LINES = [
 const TERMINAL_PORTFOLIO_IMAGE_SRC = new URL("../../img/terminal-portfolio.png", import.meta.url).href;
 const CAT_WINDOW_IMAGE_SRC = new URL("../../img/cat-window.png", import.meta.url).href;
 
-const SOCIAL_LINKS = [
-    {
-        iconClass: "bi bi-facebook",
-        label: "Facebook",
-        url: "https://www.facebook.com/nik.khandwala/",
+
+const BROWSER_SECTIONS = {
+    about: {
+        title: "About",
+        lines: ABOUT_LINES,
     },
-    {
-        iconClass: "bi bi-github",
-        label: "GitHub",
-        url: "https://github.com/popados/",
+    contact: {
+        title: "Contact",
+        lines: CONTACT_LINES,
     },
-    {
-        iconClass: "bi bi-linkedin",
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/nikhil-khandwala/",
+    resume: {
+        title: "Resume",
+        lines: RESUME_LINES,
     },
-];
+    "social media": {
+        title: "Social Media",
+        links: SOCIAL_LINKS,
+    },
+};
 
 const PROJECT_CARDS = [
     {
@@ -411,10 +433,90 @@ export function createTerminalPortfolioView() {
     skillBrowser.appendChild(skillBrowserHeader);
     skillBrowser.appendChild(skillCard);
 
+    const aboutBrowser = document.createElement("section");
+    aboutBrowser.className = "terminal-project-browser";
+    aboutBrowser.hidden = true;
+
+    const aboutBrowserHeader = document.createElement("div");
+    aboutBrowserHeader.className = "terminal-project-browser-header";
+
+    const aboutBrowserTitle = document.createElement("p");
+    aboutBrowserTitle.className = "terminal-title";
+    aboutBrowserTitle.textContent = "About";
+
+    aboutBrowserHeader.appendChild(aboutBrowserTitle);
+
+    const aboutCard = document.createElement("article");
+    aboutCard.className = "terminal-project-card";
+
+    aboutBrowser.appendChild(aboutBrowserHeader);
+    aboutBrowser.appendChild(aboutCard);
+
+    const socialBrowser = document.createElement("section");
+    socialBrowser.className = "terminal-project-browser";
+    socialBrowser.hidden = true;
+
+    const socialBrowserHeader = document.createElement("div");
+    socialBrowserHeader.className = "terminal-project-browser-header";
+
+    const socialBrowserTitle = document.createElement("p");
+    socialBrowserTitle.className = "terminal-title";
+    socialBrowserTitle.textContent = "Social Media";
+
+    socialBrowserHeader.appendChild(socialBrowserTitle);
+
+    const socialCard = document.createElement("article");
+    socialCard.className = "terminal-project-card";
+
+    socialBrowser.appendChild(socialBrowserHeader);
+    socialBrowser.appendChild(socialCard);
+
+    const contactBrowser = document.createElement("section");
+    contactBrowser.className = "terminal-project-browser";
+    contactBrowser.hidden = true;
+
+    const contactBrowserHeader = document.createElement("div");
+    contactBrowserHeader.className = "terminal-project-browser-header";
+
+    const contactBrowserTitle = document.createElement("p");
+    contactBrowserTitle.className = "terminal-title";
+    contactBrowserTitle.textContent = "Contact";
+
+    contactBrowserHeader.appendChild(contactBrowserTitle);
+
+    const contactCard = document.createElement("article");
+    contactCard.className = "terminal-project-card";
+
+    contactBrowser.appendChild(contactBrowserHeader);
+    contactBrowser.appendChild(contactCard);
+
+    const resumeBrowser = document.createElement("section");
+    resumeBrowser.className = "terminal-project-browser";
+    resumeBrowser.hidden = true;
+
+    const resumeBrowserHeader = document.createElement("div");
+    resumeBrowserHeader.className = "terminal-project-browser-header";
+
+    const resumeBrowserTitle = document.createElement("p");
+    resumeBrowserTitle.className = "terminal-title";
+    resumeBrowserTitle.textContent = "Resume";
+
+    resumeBrowserHeader.appendChild(resumeBrowserTitle);
+
+    const resumeCard = document.createElement("article");
+    resumeCard.className = "terminal-project-card";
+
+    resumeBrowser.appendChild(resumeBrowserHeader);
+    resumeBrowser.appendChild(resumeCard);
+
     container.appendChild(banner);
     container.appendChild(terminal);
     container.appendChild(projectBrowser);
     container.appendChild(skillBrowser);
+    container.appendChild(aboutBrowser);
+    container.appendChild(socialBrowser);
+    container.appendChild(contactBrowser);
+    container.appendChild(resumeBrowser);
 
     const commandHistory = [];
     let historyIndex = -1;
@@ -517,6 +619,127 @@ export function createTerminalPortfolioView() {
         skillBrowser.hidden = true;
     };
 
+    const renderAboutCard = () => {
+        aboutCard.innerHTML = "";
+        BROWSER_SECTIONS.about.lines.forEach((lineText) => {
+            const line = document.createElement("p");
+            line.className = "terminal-line";
+            if (lineText.trim().startsWith(">")) {
+                const marker = document.createElement("span");
+                marker.className = "terminal-about-marker";
+                marker.textContent = "> ";
+                const text = document.createElement("span");
+                text.textContent = lineText.trim().slice(1).trimStart();
+                line.appendChild(marker);
+                line.appendChild(text);
+            } else {
+                line.textContent = lineText;
+            }
+            aboutCard.appendChild(line);
+        });
+    };
+
+    const renderSocialCard = () => {
+        socialCard.innerHTML = "";
+        BROWSER_SECTIONS["social media"].links.forEach((entry) => {
+            const line = document.createElement("p");
+            line.className = "terminal-line terminal-line-social";
+
+            const icon = document.createElement("span");
+            icon.className = "terminal-social-icon";
+            icon.setAttribute("aria-hidden", "true");
+
+            const iconGlyph = document.createElement("i");
+            iconGlyph.className = entry.iconClass;
+            icon.appendChild(iconGlyph);
+
+            const label = document.createElement("span");
+            label.className = "terminal-social-label";
+            label.textContent = `${entry.label}: `;
+
+            const link = document.createElement("a");
+            link.className = "terminal-social-link";
+            link.href = entry.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = entry.url;
+
+            line.appendChild(icon);
+            line.appendChild(label);
+            line.appendChild(link);
+            socialCard.appendChild(line);
+        });
+    };
+
+    const renderContactCard = () => {
+        contactCard.innerHTML = "";
+        BROWSER_SECTIONS.contact.lines.forEach((lineText) => {
+            const line = document.createElement("p");
+            line.className = "terminal-line";
+            line.textContent = lineText;
+            contactCard.appendChild(line);
+        });
+    };
+
+    const renderResumeCard = () => {
+        resumeCard.innerHTML = "";
+        BROWSER_SECTIONS.resume.lines.forEach((lineText) => {
+            const line = document.createElement("p");
+            line.className = "terminal-line";
+            line.textContent = lineText;
+            resumeCard.appendChild(line);
+        });
+    };
+
+    const showAboutBrowser = () => {
+        aboutBrowser.hidden = false;
+        renderAboutCard();
+        centerTerminalViewport();
+    };
+
+    const hideAboutBrowser = () => {
+        aboutBrowser.hidden = true;
+    };
+
+    const showSocialBrowser = () => {
+        socialBrowser.hidden = false;
+        renderSocialCard();
+        centerTerminalViewport();
+    };
+
+    const hideSocialBrowser = () => {
+        socialBrowser.hidden = true;
+    };
+
+    const showContactBrowser = () => {
+        contactBrowser.hidden = false;
+        renderContactCard();
+        centerTerminalViewport();
+    };
+
+    const hideContactBrowser = () => {
+        contactBrowser.hidden = true;
+    };
+
+    const showResumeBrowser = () => {
+        resumeBrowser.hidden = false;
+        renderResumeCard();
+        centerTerminalViewport();
+    };
+
+    const hideResumeBrowser = () => {
+        resumeBrowser.hidden = true;
+    };
+
+    const hideAllBrowsers = () => {
+        hideProjectBrowser();
+        hideSkillBrowser();
+        hideAboutBrowser();
+        hideSocialBrowser();
+        hideContactBrowser();
+        hideResumeBrowser();
+    };
+
     const centerTerminalViewport = () => {
         requestAnimationFrame(() => {
             terminal.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -589,6 +812,17 @@ export function createTerminalPortfolioView() {
 
                 line.appendChild(aboutMarker);
                 line.appendChild(aboutText);
+            } else if (title === "Skills" && lineText.includes(":")) {
+                const colonIdx = lineText.indexOf(":");
+                const label = document.createElement("span");
+                label.className = "terminal-skill-label";
+                label.textContent = lineText.slice(0, colonIdx + 1);
+
+                const value = document.createElement("span");
+                value.textContent = lineText.slice(colonIdx + 1);
+
+                line.appendChild(label);
+                line.appendChild(value);
             } else {
                 line.textContent = lineText;
             }
@@ -609,7 +843,7 @@ export function createTerminalPortfolioView() {
         heading.textContent = "Social Media";
         block.appendChild(heading);
 
-        SOCIAL_LINKS.forEach((entry) => {
+        BROWSER_SECTIONS["social media"].links.forEach((entry) => {
             const line = document.createElement("p");
             line.className = "terminal-line terminal-line-social";
 
@@ -653,8 +887,7 @@ export function createTerminalPortfolioView() {
 
         if (command === "clear") {
             output.innerHTML = "";
-            hideProjectBrowser();
-            hideSkillBrowser();
+            // hideAllBrowsers();
             appendResponseBlock("Welcome", [
                 "Terminal portfolio initialized.",
                 "Type 'help' to view all commands.",
@@ -663,6 +896,7 @@ export function createTerminalPortfolioView() {
         }
 
         if (command === "help") {
+            // hideAllBrowsers();
             appendResponseBlock("Help", HELP_LINES, "help");
             return;
         }
@@ -677,30 +911,32 @@ export function createTerminalPortfolioView() {
         const commandData = COMMAND_CONTENT[resolvedCommand];
 
         if (!commandData) {
-            hideProjectBrowser();
-            hideSkillBrowser();
+            hideAllBrowsers();
             appendResponseBlock("Unknown command", ["Type 'help' to view available commands."], "error");
             return;
         }
 
         if (resolvedCommand === "social media") {
-            hideProjectBrowser();
-            hideSkillBrowser();
+            hideAllBrowsers();
+            showSocialBrowser();
             appendSocialMediaBlock();
             return;
         }
 
+        hideAllBrowsers();
+
         if (resolvedCommand === "projects") {
             currentProjectIndex = 0;
             showProjectBrowser();
-            hideSkillBrowser();
         } else if (resolvedCommand === "skills") {
             currentSkillCategoryIndex = 0;
             showSkillBrowser();
-            hideProjectBrowser();
-        } else {
-            hideProjectBrowser();
-            hideSkillBrowser();
+        } else if (resolvedCommand === "about") {
+            showAboutBrowser();
+        } else if (resolvedCommand === "contact") {
+            showContactBrowser();
+        } else if (resolvedCommand === "resume") {
+            showResumeBrowser();
         }
 
         appendResponseBlock(commandData.title, commandData.lines);

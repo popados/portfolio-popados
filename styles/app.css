@@ -175,6 +175,14 @@ footer {
     color: #a1ff00;
 }
 
+.terminal-skill-label {
+    color: #dbd86c;
+    /* font-family: "Oxanium", sans-serif; */
+    font-size: 1rem;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+}
+
 .terminal-block {
     border-left: 3px solid rgba(124, 246, 211, 0.45);
     padding-left: 0.75rem;
