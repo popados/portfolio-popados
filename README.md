@@ -89,13 +89,36 @@ You could also extend this portfolio with:
 - Command history using ↑ ↓ arrows [x]
 - Typing animation
 - ASCII logo banner [x]
-- Project cards rendered inside terminal output
+- Project cards rendered inside terminal output [x]
+  - Add projects (2 done need 3rd)
+  - Portfolio projects stored as JSON and rendered dynamically
+- Skills card [x]
 - Theme switching (theme dark, theme light)
 - Fake filesystem (ls, cat about.txt)
 - Real resume download command
 - GitHub API integration showing repositories live
-- Portfolio projects stored as JSON and rendered dynamically
 
+Got some content added and worked with finishing up features I want to have.
+
+Very sleek minimal design that shows everything in an easy method.
+
+TODO:
+- Cards for each command that spawns below the terminal
+  - About
+    - Add card that has a description of my services
+  - Skills
+    - Update skills and categories
+  - Resume
+    - Get a downloadable link to my resume
+    - Display Some stuff in the terminal
+    - Card displays more accurate information
+  - Projects(1)
+  - Contact
+    - Card has opt-in function
+    - Text area to allow people to write a message
+    - Terminal has links to emails
+  - Social Media
+    - Card that displays a preview of the social media link
 
 ***
 

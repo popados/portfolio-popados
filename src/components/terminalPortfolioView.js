@@ -2,7 +2,7 @@ const COMMAND_CONTENT = {
     about: {
         title: "About",
         lines: [
-            "> Full-stack web developer specializing in responsive websites, modern user interfaces, and API-driven applications.",
+            "> Nikhil Khandwala or Popados, a front-end web developer specializing in responsive websites, modern user interfaces, and API-driven applications.",
             "> I create detail-oriented portfolio websites, dashboards, and responsive landing pages with a strong foundation in usability, performance, and modern design. ",
             "> Focusing on building clean, professional web experiences that not only look great but also provide intuitive navigation to establish a polished and effective online presence for your brand, skills, or services.",
             "> Tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB."
@@ -19,8 +19,8 @@ const COMMAND_CONTENT = {
     projects: {
         title: "Projects",
         lines: [
-            "1) Terminal Portfolio - command-driven personal site",
-            "2) Responsive Landing Pages - conversion-focused page builds",
+            "1) Terminal Portfolio - command-driven site",
+            "2) Cat Blog: The Cat Window - article-first layouts built for visual storytelling",
             "3) UI Refactor Work - modernized and simplified existing interfaces",
         ],
     },
@@ -42,9 +42,9 @@ const COMMAND_CONTENT = {
     "social media": {
         title: "Social Media",
         lines: [
-            "GitHub: https://github.com/your-username",
-            "LinkedIn: https://linkedin.com/in/your-profile",
-            "X: https://x.com/your-handle",
+            "GitHub: https://github.com/popados/",
+            "LinkedIn: https://www.linkedin.com/in/nikhil-khandwala/",
+            "Facebook: https://www.facebook.com/nik.khandwala",
         ],
     },
 };
@@ -61,6 +61,24 @@ const HELP_LINES = [
     "clear - clear the terminal",
 ];
 
+const SOCIAL_LINKS = [
+    {
+        iconClass: "bi bi-facebook",
+        label: "Facebook",
+        url: "https://www.facebook.com/nik.khandwala/",
+    },
+    {
+        iconClass: "bi bi-github",
+        label: "GitHub",
+        url: "https://github.com/popados/",
+    },
+    {
+        iconClass: "bi bi-linkedin",
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/nikhil-khandwala/",
+    },
+];
+
 const PROJECT_CARDS = [
     {
         title: "Terminal Portfolio",
@@ -70,27 +88,29 @@ const PROJECT_CARDS = [
             "Interactive command parser with aliases",
             "Keyboard command history via up/down arrows",
             "Context-aware help and styled terminal output",
+            "Dynamic project and skill browsers with prev/next navigation",
         ],
         stack: ["JavaScript", "HTML", "CSS", "Vite"],
         screenshot: "../../img/terminal-portfolio.png",
-        screenshotAlt: "Terminal Portfolio project screenshot",
-        githubUrl: "https://github.com/your-username/terminal-portfolio",
-        demoUrl: "https://your-demo-site.com/terminal-portfolio",
+        screenshotAlt: "Terminal Portfolio Screenshot",
+        githubUrl: "https://github.com/popados/portfolio-popados",
+        demoUrl: "https://popados.org",
     },
     {
-        title: "Responsive Landing Pages",
+        title: "Cat Blog: The Cat Window",
         description:
-            "Conversion-focused landing page builds tuned for speed, readability, and cross-device consistency.",
+            "A cat-focused blog and image gallery experience with a brutalist UI/UX direction, modular section cards, and article-first layouts built for visual storytelling.",
         features: [
-            "Mobile-first responsive layout architecture",
-            "Section-based storytelling and CTA placement",
-            "Performance-aware media and typography scaling",
+            "Interactive gallery with lightbox viewing for cat image collections",
+            "Brutalist UI/UX system built with reusable section cards",
+            "Blog and article templates with room for affiliate links",
+            "Image-forward content flow optimized for blog browsing",
         ],
-        stack: ["JavaScript", "HTML", "CSS"],
-        screenshot: "../../img/terminal-portfolio.png",
-        screenshotAlt: "Responsive landing page project screenshot",
-        githubUrl: "https://github.com/your-username/responsive-landing-pages",
-        demoUrl: "https://your-demo-site.com/responsive-landing-pages",
+        stack: ["JavaScript", "HTML", "CSS", "Vite", "Node.js"],
+        screenshot: "../../img/cat-window.png",
+        screenshotAlt: "Cat blog project screenshot",
+        githubUrl: "https://github.com/popados/cat-window",
+        demoUrl: "https://thecatwindow.com",
     },
     {
         title: "UI Refactor Work",
@@ -104,8 +124,51 @@ const PROJECT_CARDS = [
         stack: ["JavaScript", "CSS", "Design Systems"],
         screenshot: "../../img/terminal-portfolio.png",
         screenshotAlt: "UI refactor project screenshot",
-        githubUrl: "https://github.com/your-username/ui-refactor-work",
-        demoUrl: "https://your-demo-site.com/ui-refactor-work",
+        githubUrl: "https://github.com/popados/ui-refactor-work",
+        demoUrl: "https://popados.org/ui-refactor-work",
+    },
+];
+
+const SKILL_ITEMS = [
+    { name: "JavaScript", level: 92 },
+    { name: "HTML", level: 96 },
+    { name: "CSS", level: 94 },
+    { name: "React", level: 88 },
+    { name: "Node.js", level: 84 },
+    { name: "Express", level: 82 },
+    { name: "MongoDB", level: 78 },
+    { name: "Vite", level: 90 },
+    { name: "Git", level: 86 },
+];
+
+const SKILL_CATEGORIES = [
+    {
+        title: "Frontend",
+        description: "Core client-side tools I use to build responsive interfaces and polished user experiences.",
+        items: [
+            { name: "JavaScript", level: 92 },
+            { name: "HTML", level: 96 },
+            { name: "CSS", level: 94 },
+            { name: "React", level: 88 },
+        ],
+    },
+    {
+        title: "Backend",
+        description: "Server-side technologies I use for APIs, routing, and data handling.",
+        items: [
+            { name: "Node.js", level: 84 },
+            { name: "Express", level: 82 },
+            { name: "MongoDB", level: 78 },
+        ],
+    },
+    {
+        title: "Workflow",
+        description: "Development tools and workflows I rely on to ship and maintain projects efficiently.",
+        items: [
+            { name: "Vite", level: 90 },
+            { name: "Git", level: 86 },
+            { name: "npm", level: 88 },
+        ],
     },
 ];
 
@@ -148,7 +211,7 @@ export function createTerminalPortfolioView() {
     ].join("\n");
 
     const bannerSubtitle = document.createElement("p");
-    bannerSubtitle.textContent = "Portfolio Terminal Console | 2026";
+    bannerSubtitle.textContent = "Portfolio Terminal | 2026";
 
     bannerOverlay.appendChild(bannerTitle);
     bannerOverlay.appendChild(bannerSubtitle);
@@ -292,14 +355,118 @@ export function createTerminalPortfolioView() {
     projectBrowser.appendChild(projectBrowserHeader);
     projectBrowser.appendChild(projectCard);
 
+    const skillBrowser = document.createElement("section");
+    skillBrowser.className = "terminal-skills-browser";
+    skillBrowser.hidden = true;
+
+    const skillBrowserHeader = document.createElement("div");
+    skillBrowserHeader.className = "terminal-project-browser-header";
+
+    const skillBrowserTitle = document.createElement("p");
+    skillBrowserTitle.className = "terminal-title";
+    skillBrowserTitle.textContent = "Skills Browser";
+
+    const skillBrowserCount = document.createElement("p");
+    skillBrowserCount.className = "terminal-project-browser-count";
+
+    const skillBrowserControls = document.createElement("div");
+    skillBrowserControls.className = "terminal-project-browser-controls";
+
+    const prevSkillButton = document.createElement("button");
+    prevSkillButton.type = "button";
+    prevSkillButton.className = "terminal-project-nav-button";
+    prevSkillButton.textContent = "Prev";
+
+    const nextSkillButton = document.createElement("button");
+    nextSkillButton.type = "button";
+    nextSkillButton.className = "terminal-project-nav-button";
+    nextSkillButton.textContent = "Next";
+
+    skillBrowserControls.appendChild(prevSkillButton);
+    skillBrowserControls.appendChild(nextSkillButton);
+    skillBrowserHeader.appendChild(skillBrowserTitle);
+    skillBrowserHeader.appendChild(skillBrowserCount);
+    skillBrowserHeader.appendChild(skillBrowserControls);
+
+    const skillCard = document.createElement("article");
+    skillCard.className = "terminal-project-card";
+
+    const skillCardTitle = document.createElement("h3");
+    skillCardTitle.className = "terminal-block-title";
+    skillCardTitle.textContent = "Proficiency";
+
+    const skillCardDescription = document.createElement("p");
+    skillCardDescription.className = "terminal-project-card-description";
+    skillCardDescription.textContent = "A quick snapshot of the technologies I use most often and how comfortable I am with each one.";
+
+    const skillBars = document.createElement("div");
+    skillBars.className = "terminal-skill-bars";
+
+    skillCard.appendChild(skillCardTitle);
+    skillCard.appendChild(skillCardDescription);
+    skillCard.appendChild(skillBars);
+
+    skillBrowser.appendChild(skillBrowserHeader);
+    skillBrowser.appendChild(skillCard);
+
     container.appendChild(banner);
     container.appendChild(terminal);
     container.appendChild(projectBrowser);
+    container.appendChild(skillBrowser);
 
     const commandHistory = [];
     let historyIndex = -1;
     let pendingInput = "";
     let currentProjectIndex = 0;
+    let currentSkillCategoryIndex = 0;
+
+    const renderSkillCard = () => {
+        const category = SKILL_CATEGORIES[currentSkillCategoryIndex];
+        skillBrowserCount.textContent = `${currentSkillCategoryIndex + 1}/${SKILL_CATEGORIES.length}`;
+        skillCardTitle.textContent = category.title;
+        skillCardDescription.textContent = category.description;
+
+        skillBars.innerHTML = "";
+
+        category.items.forEach((skill) => {
+            const skillRow = document.createElement("div");
+            skillRow.className = "terminal-skill-row";
+
+            const skillMeta = document.createElement("div");
+            skillMeta.className = "terminal-skill-meta";
+
+            const skillName = document.createElement("span");
+            skillName.className = "terminal-skill-name";
+            skillName.textContent = skill.name;
+
+            const skillValue = document.createElement("span");
+            skillValue.className = "terminal-skill-value";
+            skillValue.textContent = `${skill.level}%`;
+
+            const progressTrack = document.createElement("div");
+            progressTrack.className = "terminal-skill-progress-track";
+
+            const totalBars = 10;
+            const activeBars = Math.floor(skill.level / 10);
+
+            for (let index = 0; index < totalBars; index += 1) {
+                const bar = document.createElement("span");
+                bar.className = "terminal-skill-progress-bar";
+
+                if (index < activeBars) {
+                    bar.classList.add("is-active");
+                }
+
+                progressTrack.appendChild(bar);
+            }
+
+            skillMeta.appendChild(skillName);
+            skillMeta.appendChild(skillValue);
+            skillRow.appendChild(skillMeta);
+            skillRow.appendChild(progressTrack);
+            skillBars.appendChild(skillRow);
+        });
+    };
 
     const renderProjectCard = () => {
         const project = PROJECT_CARDS[currentProjectIndex];
@@ -322,7 +489,7 @@ export function createTerminalPortfolioView() {
             projectCardStack.appendChild(stackTag);
         });
 
-        projectCardImage.src = project.screenshot === "../../img/terminal-portfolio.png" ? projectImageSrc : new URL(project.screenshot, import.meta.url).href;
+        projectCardImage.src = project.screenshot;
         projectCardImage.alt = project.screenshotAlt;
         projectCardGithubLink.href = project.githubUrl;
         projectCardDemoLink.href = project.demoUrl;
@@ -331,14 +498,38 @@ export function createTerminalPortfolioView() {
     const showProjectBrowser = () => {
         projectBrowser.hidden = false;
         renderProjectCard();
-        requestAnimationFrame(() => {
-            projectBrowser.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        });
+        centerTerminalViewport();
     };
 
     const hideProjectBrowser = () => {
         projectBrowser.hidden = true;
     };
+
+    const showSkillBrowser = () => {
+        skillBrowser.hidden = false;
+        renderSkillCard();
+        centerTerminalViewport();
+    };
+
+    const hideSkillBrowser = () => {
+        skillBrowser.hidden = true;
+    };
+
+    const centerTerminalViewport = () => {
+        requestAnimationFrame(() => {
+            terminal.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    };
+
+    prevSkillButton.addEventListener("click", () => {
+        currentSkillCategoryIndex = currentSkillCategoryIndex === 0 ? SKILL_CATEGORIES.length - 1 : currentSkillCategoryIndex - 1;
+        renderSkillCard();
+    });
+
+    nextSkillButton.addEventListener("click", () => {
+        currentSkillCategoryIndex = currentSkillCategoryIndex === SKILL_CATEGORIES.length - 1 ? 0 : currentSkillCategoryIndex + 1;
+        renderSkillCard();
+    });
 
     prevProjectButton.addEventListener("click", () => {
         currentProjectIndex = currentProjectIndex === 0 ? PROJECT_CARDS.length - 1 : currentProjectIndex - 1;
@@ -386,7 +577,62 @@ export function createTerminalPortfolioView() {
                 line.classList.add("terminal-line-help");
             }
 
-            line.textContent = lineText;
+            if (title === "About" && lineText.trim().startsWith(">")) {
+                const aboutMarker = document.createElement("span");
+                aboutMarker.className = "terminal-about-marker";
+                aboutMarker.textContent = "> ";
+
+                const aboutText = document.createElement("span");
+                aboutText.textContent = lineText.trim().slice(1).trimStart();
+
+                line.appendChild(aboutMarker);
+                line.appendChild(aboutText);
+            } else {
+                line.textContent = lineText;
+            }
+
+            block.appendChild(line);
+        });
+
+        output.appendChild(block);
+        output.scrollTop = output.scrollHeight;
+    };
+
+    const appendSocialMediaBlock = () => {
+        const block = document.createElement("div");
+        block.className = "terminal-block terminal-block-social";
+
+        const heading = document.createElement("p");
+        heading.className = "terminal-block-title";
+        heading.textContent = "Social Media";
+        block.appendChild(heading);
+
+        SOCIAL_LINKS.forEach((entry) => {
+            const line = document.createElement("p");
+            line.className = "terminal-line terminal-line-social";
+
+            const icon = document.createElement("span");
+            icon.className = "terminal-social-icon";
+            icon.setAttribute("aria-hidden", "true");
+
+            const iconGlyph = document.createElement("i");
+            iconGlyph.className = entry.iconClass;
+            icon.appendChild(iconGlyph);
+
+            const label = document.createElement("span");
+            label.className = "terminal-social-label";
+            label.textContent = `${entry.label}: `;
+
+            const link = document.createElement("a");
+            link.className = "terminal-social-link";
+            link.href = entry.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = entry.url;
+
+            line.appendChild(icon);
+            line.appendChild(label);
+            line.appendChild(link);
             block.appendChild(line);
         });
 
@@ -406,6 +652,7 @@ export function createTerminalPortfolioView() {
         if (command === "clear") {
             output.innerHTML = "";
             hideProjectBrowser();
+            hideSkillBrowser();
             appendResponseBlock("Welcome", [
                 "Terminal portfolio initialized.",
                 "Type 'help' to view all commands.",
@@ -429,15 +676,29 @@ export function createTerminalPortfolioView() {
 
         if (!commandData) {
             hideProjectBrowser();
+            hideSkillBrowser();
             appendResponseBlock("Unknown command", ["Type 'help' to view available commands."], "error");
+            return;
+        }
+
+        if (resolvedCommand === "social media") {
+            hideProjectBrowser();
+            hideSkillBrowser();
+            appendSocialMediaBlock();
             return;
         }
 
         if (resolvedCommand === "projects") {
             currentProjectIndex = 0;
             showProjectBrowser();
+            hideSkillBrowser();
+        } else if (resolvedCommand === "skills") {
+            currentSkillCategoryIndex = 0;
+            showSkillBrowser();
+            hideProjectBrowser();
         } else {
             hideProjectBrowser();
+            hideSkillBrowser();
         }
 
         appendResponseBlock(commandData.title, commandData.lines);
@@ -449,6 +710,10 @@ export function createTerminalPortfolioView() {
         const normalized = normalizeCommand(rawInput);
 
         runCommand(rawInput);
+
+        if (normalized) {
+            centerTerminalViewport();
+        }
 
         if (normalized && commandHistory[commandHistory.length - 1] !== normalized) {
             commandHistory.push(normalized);

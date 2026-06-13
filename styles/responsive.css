@@ -88,4 +88,18 @@
     .terminal-project-card-image {
         max-height: 180px;
     }
+
+    .terminal-skills-browser {
+        padding: 0.8rem;
+    }
+
+    .terminal-skill-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.15rem;
+    }
+
+    .terminal-skill-progress-track {
+        height: 10px;
+    }
 }

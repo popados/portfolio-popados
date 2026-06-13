@@ -171,6 +171,10 @@ footer {
     color: #dbd86c
 }
 
+.terminal-about-marker {
+    color: #a1ff00;
+}
+
 .terminal-block {
     border-left: 3px solid rgba(124, 246, 211, 0.45);
     padding-left: 0.75rem;
@@ -188,6 +192,39 @@ footer {
 
 .terminal-block-error {
     border-left-color: rgba(255, 95, 87, 0.72);
+}
+
+.terminal-block-social {
+    border-left-color: rgba(161, 255, 0, 0.55);
+}
+
+.terminal-line-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+    align-items: baseline;
+}
+
+.terminal-social-icon {
+    color: #d7ffb0;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.18rem;
+}
+
+.terminal-social-label {
+    color: #d7ffb0;
+}
+
+.terminal-social-link {
+    color: #9afee0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.terminal-social-link:hover {
+    color: #c7fff0;
 }
 
 .terminal-input-form {
@@ -266,7 +303,8 @@ footer {
     background: rgba(124, 246, 211, 0.12);
     color: #e9ffe6;
     border-radius: 8px;
-    padding: 0.38rem 0.7rem;
+    padding: 0.32rem 0.7rem;
+    margin-bottom: 10px;
     font-family: "Space Mono", monospace;
     font-size: 0.84rem;
     /* font-weight: 600; */
@@ -296,7 +334,7 @@ footer {
 }
 
 .terminal-project-card-description {
-    color: #dff8c3;
+    color: #eeffd3;
     font-size: 0.94rem;
     line-height: 1.55;
 }
@@ -366,5 +404,70 @@ footer {
     border-radius: 10px;
     border: 1px solid rgba(196, 255, 124, 0.24);
     object-fit: cover;
-    max-height: 230px;
+    /* max-height: 230px; */
+}
+
+.terminal-skills-browser {
+    border: 1px solid rgba(196, 255, 124, 0.3);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(11, 15, 19, 0.94), rgba(11, 15, 19, 0.88));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+    padding: 1rem;
+    /* display: grid; */
+    gap: 0.9rem;
+}
+
+.terminal-skill-bars {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.terminal-skills-browser .terminal-project-browser-header {
+    grid-template-columns: 1fr auto auto;
+}
+
+.terminal-skill-row {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.terminal-skill-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.terminal-skill-name {
+    color: #dbd86c;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.terminal-skill-value {
+    color: #9afee0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.terminal-skill-progress-track {
+    height: 12px;
+    border-radius: 6px;
+    background: rgba(196, 255, 124, 0.06);
+    border: 1px solid rgba(196, 255, 124, 0.22);
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 3px;
+    padding: 2px;
+}
+
+.terminal-skill-progress-bar {
+    border-radius: 2px;
+    background: rgba(154, 254, 224, 0.12);
+}
+
+.terminal-skill-progress-bar.is-active {
+    background: #ff9a9a8c;
 }
